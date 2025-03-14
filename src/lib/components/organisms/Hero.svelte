@@ -18,7 +18,7 @@
 				Source Code
 			</Button>
 		</Sparkles>
-		<Button color="primary" href="https://histoire-sveltekit-static-blog-template.vercel.app/">
+		<Button color="primary" href="https://histoire-real-voice.com/">
 			<FeaturesIcon slot="icon" />
 			Components
 		</Button>
