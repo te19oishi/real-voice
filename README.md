@@ -1,49 +1,48 @@
-# SvelteKit Static Blog Template
+# Astro Starter Kit: Basics
 
-A lightweight and customizable template for blogs and portfolio websites, built with SvelteKit.
-
-<p align="center">
-    <img src="static/images/site-screenshot.png" alt="Screenshot" />
-</p>
-
-It was built with a few goals in mind:
-
-- Responsive design: the website looks and behaves well on screens of all sizes;
-- Fast: it only loads what's needed for it to work;
-- Adaptive: it supports dark mode from most operating systems by default (desktop and mobile);
-- Pretty: have a pleasant design that is both accessible and pleasing to the eye.
-
-I achieved this with the help of SvelteKit. There is almost no JavaScript running, and it actually works with JS disabled! While JS is awesome, it's important to know when it's not needed.
-
-# Demo site
-
-You can see the template live [on the demo site](https://real-voice.com/). Additionally, you can check all components in isolation [on Histoire](https://histoire-real-voice.com/).
-
-# Building & Running Locally
-
-To run it locally, you simply have to run:
-
-```shell
-# First, install dependencies
-npm install
-# Then, run it on dev mode
-npm run dev
+```sh
+npm create astro@latest -- --template basics
 ```
 
-The site should now be available at http://localhost:5173/ on your local machine, and your local machine's IP address on your network—great for testing on mobile OSes.
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-# Histoire / Storybook
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-I've used [Histoire](https://histoire.dev), a Vite-based Storybook alternative to be able to see and develop components in isolation. To open it, run `npm run story:dev`.
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-# Image Optimization
+## 🚀 Project Structure
 
-This website uses [image-transmutation](https://github.com/matfantinel/image-transmutation) to automatically optimize images used in the site. This means that even if you use non-optimal image formats (like lossless PNGs), it will go over the images and convert images to WebP and AVIF for you, as long as you use the `<Image />` component instead of `<img />`. This is done on build, so it doesn't change anything when running the website locally.
+Inside of your Astro project, you'll see the following folders and files:
 
-# Managing Posts
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-All posts are Markdown files that are processed with [MDsveX](https://mdsvex.pngwn.io/) to allow using Svelte components inside them. In order to make it easier to manage posts, I highly recommend the [Front Matter VS Code extension](https://frontmatter.codes/), which gives you a nice CMS-like UI.
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-# Hosting
+## 🧞 Commands
 
-When you run `npm run build`, the website will be compiled into a static site, which means you can host it pretty much anywhere. Some free alternatives I recommend are GitHub Pages, Vercel and Netlify.
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
