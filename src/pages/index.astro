@@ -1,43 +1,64 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-const posts = await Astro.glob('./posts/*.md');
-posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+const allPosts = await Astro.glob("./posts/*.md");
+const posts = allPosts
+  .map((post) => (post.frontmatter.status === "published" ? post : null))
+  .filter((x) => !!x);
+posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime(),
+);
 ---
 
-<Layout title="Modern Blog">
+<Layout title="素人の正直レビュー">
   <main>
     <header>
-      <h1>Modern Blog</h1>
-      <p class="subtitle">Exploring ideas and sharing knowledge</p>
+      <h1>素人の正直レビュー</h1>
+      <p class="subtitle">
+        食・体験・ガジェットなど、素人がなんでもかんでも忖度抜きで正直にレビューします。
+      </p>
     </header>
-    
+
     <div class="posts">
-      {posts.map(post => (
-        <article class="post-card">
-          {post.frontmatter.image && (
-            <div class="post-image">
-              <img src={post.frontmatter.image} alt={post.frontmatter.title} />
-            </div>
-          )}
-          <div class="post-content">
-            <p class="date">{new Date(post.frontmatter.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}</p>
-            <h2>
-              <a href={post.url}>{post.frontmatter.title}</a>
-            </h2>
-            {post.frontmatter.description && (
-              <p class="description">{post.frontmatter.description}</p>
+      {
+        posts.map((post) => (
+          <article class="post-card">
+            {post.frontmatter.image && (
+              <div class="post-image">
+                <img
+                  src={post.frontmatter.image}
+                  alt={post.frontmatter.title}
+                />
+              </div>
             )}
-          </div>
-          <a href={post.url} class="read-more">
-            Read post →
-          </a>
-        </article>
-      ))}
+            <div class="post-content">
+              <p class="date">
+                {new Date(post.frontmatter.date).toLocaleDateString("ja-JP", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
+              <h2>
+                <a href={post.url}>{post.frontmatter.title}</a>
+              </h2>
+              {post.frontmatter.description && (
+                <p class="description">{post.frontmatter.description}</p>
+              )}
+              <p>
+                {"⭐️".repeat(post.frontmatter.rating)}(星
+                {post.frontmatter.rating})
+              </p>
+              <p>{post.frontmatter.price}円</p>
+            </div>
+            <a href={post.url} class="read-more">
+              投稿を読む →
+            </a>
+          </article>
+        ))
+      }
     </div>
   </main>
 </Layout>
@@ -73,16 +94,18 @@ posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
     background: white;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1),
-                0 2px 4px -2px rgba(37, 99, 235, 0.1);
+    box-shadow:
+      0 4px 6px -1px rgba(37, 99, 235, 0.1),
+      0 2px 4px -2px rgba(37, 99, 235, 0.1);
     border: 1px solid var(--blue-100);
     transition: all 0.3s ease;
   }
 
   .post-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.1),
-                0 8px 10px -6px rgba(37, 99, 235, 0.1);
+    box-shadow:
+      0 20px 25px -5px rgba(37, 99, 235, 0.1),
+      0 8px 10px -6px rgba(37, 99, 235, 0.1);
     border-color: var(--blue-200);
   }
 
