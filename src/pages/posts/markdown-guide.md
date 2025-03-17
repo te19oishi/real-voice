@@ -3,6 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: Markdown Guide
 date: 2024-02-21
 description: Learn how to use Markdown in your blog posts
+status: draft
 image: https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop
 ---
 

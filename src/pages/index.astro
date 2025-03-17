@@ -1,15 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const posts = await Astro.glob('./posts/*.md');
-posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+const allPosts = await Astro.glob('./posts/*.md');
+const posts = allPosts.map((post) => post.frontmatter.status === 'published' ? post : null).filter(x => !!x);
+posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
 ---
 
-<Layout title="Modern Blog">
+<Layout title="素人の正直レビュー">
   <main>
     <header>
-      <h1>Modern Blog</h1>
-      <p class="subtitle">Exploring ideas and sharing knowledge</p>
+      <h1>素人の正直レビュー</h1>
+      <p class="subtitle">食・体験・ガジェットなど、素人がなんでもかんでも忖度抜きで正直にレビューします。</p>
     </header>
     
     <div class="posts">
