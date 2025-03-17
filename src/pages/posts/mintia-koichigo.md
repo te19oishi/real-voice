@@ -16,6 +16,7 @@ image: /_astro/mintia-koichigo_2025-03-18-00-15-20.BhnVlbh__2rwQJI.webp
 
 ### 全面
 なんとも美味しそうな見た目。
+
 ![](images/mintia-koichigo_2025-03-18-00-15-20.png)
 
 ### 裏面
@@ -23,6 +24,7 @@ image: /_astro/mintia-koichigo_2025-03-18-00-15-20.BhnVlbh__2rwQJI.webp
 
 ### 中身
 MINTIAの`M`が刻まれていた。
+
 ![](images/mintia-koichigo_2025-03-18-00-51-22.png)
 
 ## 感想
