@@ -1,13 +1,16 @@
 ---
+import { isPreviewEnvironment } from '@utils/environment';
 import Layout from './Layout.astro';
 
 const { frontmatter } = Astro.props;
+
+const isPreview = isPreviewEnvironment();
 ---
 
 <Layout title={frontmatter.title}>
   <nav>
     <div class="nav-content">
-      <a href="/" class="back-link">← Back to blog</a>
+      <a href={isPreview ? '/drafts' : '/'} class="back-link">← トップに戻る</a>
     </div>
   </nav>
   <main>
@@ -20,7 +23,7 @@ const { frontmatter } = Astro.props;
       <div class="content-wrapper">
         <header>
           <h1>{frontmatter.title}</h1>
-          <p class="date">{new Date(frontmatter.date).toLocaleDateString('en-US', {
+          <p class="date">{new Date(frontmatter.date).toLocaleDateString('ja-JP', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'

@@ -22,7 +22,7 @@ posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontma
             </div>
           )}
           <div class="post-content">
-            <p class="date">{new Date(post.frontmatter.date).toLocaleDateString('en-US', {
+            <p class="date">{new Date(post.frontmatter.date).toLocaleDateString('ja-JP', {
               year: 'numeric',
               month: 'long',
               day: 'numeric'
