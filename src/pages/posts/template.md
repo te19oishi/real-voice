@@ -3,8 +3,10 @@ layout: ../../layouts/BlogPost.astro
 title: 
 date: 2025-03-
 description: 
-rating: #int
-price: #int
+#int
+rating: 
+#int
+price: 
 status: draft #draft or published
 image: 
 ---
