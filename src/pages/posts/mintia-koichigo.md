@@ -1,9 +1,10 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: ミンティアブリーズ　濃苺食べてみた
-date: 2024-03-18
+date: 2025-03-17
 description: かなり美味しい
 rating: 5
+price: 227
 status: published
 image: /_astro/mintia-koichigo_2025-03-18-00-15-20.BhnVlbh__2rwQJI.webp
 ---
@@ -14,6 +15,7 @@ image: /_astro/mintia-koichigo_2025-03-18-00-15-20.BhnVlbh__2rwQJI.webp
 ## 全体感
 
 ### 全面
+なんとも美味しそうな見た目。
 ![](images/mintia-koichigo_2025-03-18-00-15-20.png)
 
 ### 裏面

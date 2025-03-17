@@ -47,10 +47,14 @@ posts.sort(
               {post.frontmatter.description && (
                 <p class="description">{post.frontmatter.description}</p>
               )}
-              <p>{"⭐️".repeat(post.frontmatter.rating)}(星{post.frontmatter.rating})</p>
+              <p>
+                {"⭐️".repeat(post.frontmatter.rating)}(星
+                {post.frontmatter.rating})
+              </p>
+              <p>{post.frontmatter.price}円</p>
             </div>
             <a href={post.url} class="read-more">
-              Read post →
+              投稿を読む →
             </a>
           </article>
         ))
