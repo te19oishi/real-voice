@@ -7,7 +7,8 @@ export default defineConfig({
         resolve: {
             alias: {
                 '@': '/src',
-                '@utils': '/src/utils'
+                '@utils': '/src/utils',
+                '@images': '/src/posts/images',
             }
         }
     }

@@ -23,6 +23,7 @@ const isPreview = isPreviewEnvironment();
       <div class="content-wrapper">
         <header>
           <h1>{frontmatter.title}</h1>
+          <p>{'⭐️'.repeat(frontmatter.rating)}(星{frontmatter.rating})</p>
           <p class="date">{new Date(frontmatter.date).toLocaleDateString('ja-JP', {
             year: 'numeric',
             month: 'long',

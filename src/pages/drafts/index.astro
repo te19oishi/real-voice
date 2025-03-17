@@ -1,5 +1,5 @@
 ---
-import { isPreviewEnvironment } from '@utils/environment.js';
+import { isPreviewEnvironment } from "@utils/environment.js";
 import Layout from "../../layouts/Layout.astro";
 
 const allPosts = await Astro.glob("../posts/*.md");
@@ -55,6 +55,7 @@ if (!isPreviewEnvironment()) {
                                     {post.frontmatter.description}
                                 </p>
                             )}
+                            <p>{"⭐️".repeat(post.frontmatter.rating)}(星{post.frontmatter.rating})</p>
                         </div>
                         <a href={post.url} class="read-more">
                             Read post →
